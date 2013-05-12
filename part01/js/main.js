@@ -5,7 +5,7 @@
     var adapter = new MemoryAdapter();
     adapter.initialize().done(function () {
         adapter = new LocalStorageAdapter();
-        showAlert("Data adapter initialized");
+        showAlert("Data adapter initialized", "Test");
     });
 
 
@@ -26,9 +26,11 @@
         });
     },
         
+        
+        
     function showAlert(message, title) {
-         if (navigator.notification) {
-        navigator.notification.alert(message, null, title, 'OK');
+        if (navigator.notification) {
+            navigator.notification.alert(message, null, title, 'OK');
         } else {
             alert(title ? (title + ": " + message) : message);
         }
